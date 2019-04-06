@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hackernews-service/api
+
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: ./log/application.log
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hacker-news
+
+hackernews:
+  baseUrl: https://hn.algolia.com/api/v1/search_by_date
+  searchString: ?query=nodejs
